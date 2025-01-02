@@ -20,7 +20,7 @@ return {
 			-- Lsps go here:
 			require("lspconfig").lua_ls.setup { capabilities = capabilities }
 			require("lspconfig").bashls.setup { capabilities = capabilities }
-
+			require("lspconfig").ts_ls.setup { capabilities = capabilities }
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)

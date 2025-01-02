@@ -7,6 +7,8 @@ vim.opt.expandtab = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.showtabline = 2
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- Turns of search highlights
 vim.opt.hlsearch = false
