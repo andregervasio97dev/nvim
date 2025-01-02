@@ -1,11 +1,5 @@
 local wk = require("which-key")
 wk.add({
-	{ "<leader>f",  group = "file" }, -- group
-	{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-	{ "<leader>fb", function() print("hello") end,   desc = "Foobar" },
-	{ "<leader>fn", desc = "New File" },
-	{ "<leader>f1", hidden = true },                   -- hide this keymap
-	{ "<leader>w",  proxy = "<c-w>",                 group = "windows" }, -- proxy to window mappings
 	{
 		"<leader>b",
 		group = "buffers",
@@ -13,13 +7,43 @@ wk.add({
 			return require("which-key.extras").expand.buf()
 		end
 	},
-	{ "<leader>e", "<cmd>Oil<cr>", desc = "Dir View", mode = { "n", "v" } },
+	-- Visual keymaps
 	{
-		-- Nested mappings are allowed and can be added in any order
-		-- Most attributes can be inherited or overridden on any level
-		-- There's no limit to the depth of nesting
-		mode = { "n", "v" },                      -- NORMAL and VISUAL mode
-		{ "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
-		{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
-	}
+		mode = { "v" },
+		{ '<leader>"', "<cmd>s/\\%V.*\\%V./\"&\"<cr><Esc>", desc = "sorround selected with Quotes" },
+		{ '<leader>`', "<cmd>s/\\%V.*\\%V./`&`<cr><Esc>",   desc = "sorround selected with Backticks" },
+		{ "<leader>'", "<cmd>s/\\%V.*\\%V./'&'<cr><Esc>",   desc = "sorround selected with Simple quotes" },
+		{ '<leader>{', "<cmd>s/\\%V.*\\%V./{&}<cr><Esc>",   desc = "sorround selected with Braces" },
+		{ '<leader>[', "<cmd>s/\\%V.*\\%V./[&]<cr><Esc>",   desc = "sorround selected with Brackets" },
+		{ '<leader>(', "<cmd>s/\\%V.*\\%V./(&)<cr><Esc>",   desc = "sorround selected with Parentheses" },
+		{ '<leader><', "<cmd>s/\\%V.*\\%V./<&><cr><Esc>",   desc = "sorround selected with Angled brackets" },
+	},
+	-- Normal mode keymaps
+	{
+		mode = { "n" },
+		{
+			{ "<leader>q", "<cmd>q<cr>",  desc = "Quit" },
+			{ "<leader>w", "<cmd>w<cr>",  desc = "Write" },
+			{ "<leader>f", group = "file" },
+			{
+				{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+				{ "<leader>fe", "<cmd>Oil<cr>",                  desc = "Dir View" },
+			},
+		},
+		{
+			{ '<leader>"', 'bi"<Esc>ea"<Esc>', desc = "Sorround quotes" },
+			{ '<leader>`', 'bi`<Esc>ea`<Esc>', desc = "Sorround backtick" },
+			{ "<leader>'", "bi'<Esc>ea'<Esc>", desc = "Sorround simple quotes" },
+		},
+	},
+	-- Insert mode keymaps
+	{
+		mode = { "i" },
+		{ '"', '""<Esc>i', desc = "Quotes autocomplete" },
+		{ '`', '``<Esc>i', desc = "Backtick autocomplete" },
+		{ "'", "''<Esc>i", desc = "Simple quotes autocomplete" },
+		{ "{", "{}<Esc>i", desc = "Braces autocomplete" },
+		{ "[", "[]<Esc>i", desc = "Brackets autocomplete" },
+		{ "(", "()<Esc>i", desc = "Parentheses autocomplete" },
+	},
 })
