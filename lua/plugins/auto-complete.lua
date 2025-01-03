@@ -11,8 +11,14 @@ return {
 			-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
 			-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
 			-- See the full "keymap" documentation for information on defining your own keymap.
-			keymap = { preset = 'super-tab' },
-
+			keymap = { preset = 'enter' },
+			completion = {
+				list = { selection = 'auto_insert' },
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 500,
+				},
+			},
 			appearance = {
 				-- Sets the fallback highlight groups to nvim-cmp's highlight groups
 				-- Useful for when your theme doesn't support blink.cmp

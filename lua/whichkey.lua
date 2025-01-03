@@ -21,19 +21,20 @@ wk.add({
 	-- Normal mode keymaps
 	{
 		mode = { "n" },
+		{ "<leader>q", "<cmd>q<cr>",  desc = "Quit" },
+		{ "<leader>w", "<cmd>w<cr>",  desc = "Write" },
+		{ "<leader>f", group = "file" },
 		{
-			{ "<leader>q", "<cmd>q<cr>",  desc = "Quit" },
-			{ "<leader>w", "<cmd>w<cr>",  desc = "Write" },
-			{ "<leader>f", group = "file" },
-			{
-				{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
-				{ "<leader>fe", "<cmd>Oil<cr>",                  desc = "Dir View" },
-			},
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+			{ "<leader>fe", "<cmd>Oil<cr>",                  desc = "Dir View" },
 		},
+		{ "<leader>g", group = "format" },
 		{
-			{ '<leader>"', 'bi"<Esc>ea"<Esc>', desc = "Sorround quotes" },
-			{ '<leader>`', 'bi`<Esc>ea`<Esc>', desc = "Sorround backtick" },
-			{ "<leader>'", "bi'<Esc>ea'<Esc>", desc = "Sorround simple quotes" },
+			{ "<leader>gs", "<cmd>lua MiniSplitjoin.toggle()<cr>", desc = "Toggle split args" },
+			{ '<leader>g"', 'bi"<Esc>ea"<Esc>',                    desc = "Sorround quotes" },
+			{ '<leader>g`', 'bi`<Esc>ea`<Esc>',                    desc = "Sorround backtick" },
+			{ "<leader>g'", "bi'<Esc>ea'<Esc>",                    desc = "Sorround simple quotes" },
+			{ "<leader>gc", function() vim.cmd.norm("gcc") end,    desc = "Toggle comment" }
 		},
 	},
 	-- Insert mode keymaps

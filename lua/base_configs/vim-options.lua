@@ -1,3 +1,9 @@
+-- Sets default colorscheme
+vim.cmd("colorscheme catppuccin-macchiato")
+
+-- Changes clipboard to system
+vim.opt.clipboard = "unnamedplus"
+
 -- Shows relative line number around the line and actual line number on cursor position
 vim.opt.rnu = true
 vim.opt.number = true
@@ -19,5 +25,11 @@ vim.opt.ignorecase = true
 -- Sets minimum number of lines above/below the cursor
 vim.opt.scrolloff = 5
 
--- Sets default colorscheme
-vim.cmd("colorscheme catppuccin-macchiato")
+-- Turns on list mode
+vim.opt.list = true
+
+-- Changes <Tab> character
+vim.opt.listchars = {
+	tab = "╎ ",
+	space = " "
+}
