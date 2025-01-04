@@ -21,8 +21,14 @@ wk.add({
 	-- Normal mode keymaps
 	{
 		mode = { "n" },
-		{ "<leader>q", "<cmd>q<cr>",  desc = "Quit" },
-		{ "<leader>w", "<cmd>w<cr>",  desc = "Write" },
+		{ "<leader>q", "<cmd>q<cr>", desc = "Quit" },
+		{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
+		{ "<leader>t", group = "tab" },
+		{
+			{ "<leader>te", "<cmd>tabe .<cr>", desc = "New tab" },
+			{ "<leader>tt", "<cmd>tabn<cr>",   desc = "Next tab" },
+			{ "<leader>tp", "<cmd>tabp<cr>",   desc = "Prev tab" },
+		},
 		{ "<leader>f", group = "file" },
 		{
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
