@@ -1,6 +1,20 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-	ensure_installed = { "lua_ls" },
+	ensure_installed = {
+		"lua_ls",
+		"gopls",
+		"html",
+		"ts_ls",
+		"jsonls",
+		"ols",
+		"perlnavigator",
+		"pylsp",
+		"cssls",
+		"vimls",
+		"lemminx",
+		"yamlls",
+		"vuels",
+	},
 }
 
 require("mason-lspconfig").setup_handlers {
