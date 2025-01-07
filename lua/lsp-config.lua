@@ -38,6 +38,8 @@ require("mason-lspconfig").setup_handlers {
 	end,
 }
 
+require('lspconfig').nil_ls.setup {}
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
 	callback = function(args)
