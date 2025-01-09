@@ -14,7 +14,6 @@ require("mason-lspconfig").setup {
 		"lemminx",
 		"yamlls",
 		"vuels",
-		"ruby_lsp"
 	},
 }
 
@@ -37,6 +36,7 @@ require("mason-lspconfig").setup_handlers {
 }
 
 require('lspconfig').nil_ls.setup {}
+require('lspconfig').ruby_lsp.setup {}
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
