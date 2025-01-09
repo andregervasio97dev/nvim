@@ -14,6 +14,7 @@ require("mason-lspconfig").setup {
 		"lemminx",
 		"yamlls",
 		"vuels",
+		"ruby_lsp"
 	},
 }
 
