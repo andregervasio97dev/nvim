@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local telescope = require("telescope.builtin")
 wk.add({
 	{
 		"<leader>b",
@@ -31,8 +32,11 @@ wk.add({
 		},
 		{ "<leader>f", group = "file" },
 		{
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
-			{ "<leader>fe", "<cmd>Oil<cr>",                  desc = "Dir View" },
+			{ "<leader>ff", telescope.find_files, desc = "Find File" },
+			{ "<leader>fg", telescope.live_grep,  desc = "Find Grep" },
+			{ "<leader>fh", telescope.help_tags,  desc = "Find Help" },
+			{ "<leader>fb", telescope.buffers,    desc = "Buffers" },
+			{ "<leader>fe", "<cmd>Oil<cr>",       desc = "Dir View" },
 		},
 		{ "<leader>g", group = "format" },
 		{
