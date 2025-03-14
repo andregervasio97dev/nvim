@@ -1,5 +1,12 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"ts_ls",
+		"gopls",
+		"jsonls",
+	}
+})
 
 require("mason-lspconfig").setup_handlers {
 	function(server_name)
@@ -18,13 +25,6 @@ require("mason-lspconfig").setup_handlers {
 		}
 	end,
 }
-
-require('lspconfig').nil_ls.setup {}
-require('lspconfig').ts_ls.setup {}
-require('lspconfig').lua_ls.setup {}
-require('lspconfig').bashls.setup {}
-require('lspconfig').gopls.setup {}
-require('lspconfig').vimls.setup {}
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
