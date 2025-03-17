@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
 		"ts_ls",
 		"gopls",
 		"jsonls",
+		"rust_analyzer",
 	}
 })
 
