@@ -6,10 +6,13 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"jsonls",
 		"rust_analyzer",
+		"cssls",
+		"html",
+		"jsonls",
 	}
 })
 
-require("mason-lspconfig").setup_handlers {
+require("mason-lspconfig").setup {
 	function(server_name)
 		require("lspconfig")[server_name].setup {}
 	end,

@@ -1,5 +1,5 @@
 -- Sets default colorscheme
-vim.cmd("colorscheme cyberdream")
+vim.cmd("colorscheme catppuccin-macchiato")
 
 -- Changes clipboard to system
 vim.opt.clipboard = "unnamedplus"
