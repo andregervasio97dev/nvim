@@ -2,6 +2,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
+		"bashls",
 		"ts_ls",
 		"gopls",
 		"jsonls",
@@ -11,6 +12,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"tailwindcss",
 		"somesass_ls",
+		"hyprls",
 	}
 })
 
