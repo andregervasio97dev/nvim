@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
 		"tailwindcss",
 		"somesass_ls",
 		"hyprls",
+		"postgres_lsp",
 	}
 })
 
