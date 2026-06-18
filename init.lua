@@ -1,8 +1,6 @@
--- Lazy.nvim
-require("config/lazy")
+-- Base vim configs
+require("vim_opts/vim-options")
 
 -- Plugins
-require("plug-index")
-
--- Reads configs file
-require("base_configs/vim-options")
+require("packs/vim-pack")
+require("index")

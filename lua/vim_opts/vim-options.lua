@@ -1,5 +1,5 @@
 -- Sets default colorscheme
-vim.cmd("colorscheme catppuccin-macchiato")
+vim.cmd("colorscheme catppuccin")
 
 -- Changes clipboard to system
 vim.opt.clipboard = "unnamedplus"
@@ -7,6 +7,10 @@ vim.opt.clipboard = "unnamedplus"
 -- Shows relative line number around the line and actual line number on cursor position
 vim.opt.rnu = true
 vim.opt.number = true
+
+-- Sets the split to prefer vertical
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Better indenting
 vim.opt.expandtab = false
@@ -33,3 +37,9 @@ vim.opt.listchars = {
 	tab = "╎ ",
 	space = " "
 }
+
+-- Changes <Leader>
+vim.g.mapleader = " "
+
+-- Setting menu for LSP autocomplete
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
